@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import ColorDisplay from './components/ColorDisplay/ColorDisplay';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -11,11 +12,14 @@ function App() {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/:red/:green/:blue">
+          <Route exact path="/:red/:green/:blue">
             <ColorDisplay />
           </Route>
-          <Route path="*">
+          <Route exact path="/">
             <Redirect to="/0/0/0" />
+          </Route>
+          <Route path="*">
+            <NotFound />
           </Route>
         </Switch>
       </div>
