@@ -51,3 +51,10 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 ## Additional considerations
 - Is any of your state redundant? For example, if you're tracking `wins`, `losses`, and `total`, you can probably get rid of `losses` state, and calculate it as `total - wins`.
 - Where should each piece of state live? How are you going to get data from where it lives to where it needs to be?
+
+## rough component tree
+- `App`
+    - `Header`
+        - contains three `NavLink`s
+    - `ColorDisplay`
+        - displays selected color rgb value in big text, background is selected color, takes up rest of page
